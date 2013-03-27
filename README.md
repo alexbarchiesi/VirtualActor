@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Virtual Actor
 =============
 
@@ -67,9 +66,9 @@ https://github.com/sinlab-semester-2013/VirtualActor/wiki
 Contents
 --------
 
-- VirtualActorJavaProject: application code (Eclipse project)
-- marytts: MaryTTS Source Code (Eclipse projects)
-- maryxml-input: MaryXML formatted texts for reading by the application
+* VirtualActorJavaProject: application code (Eclipse project)
+* marytts: MaryTTS Source Code (Eclipse projects)
+* maryxml-input: MaryXML formatted texts for reading by the application
 
 Setup and Dependencies
 ----------------------
@@ -86,4 +85,3 @@ Development Status
 
 See Development Journal at:
 https://github.com/sinlab-semester-2013/VirtualActor/wiki/Development-Journal
->>>>>>> origin/master
