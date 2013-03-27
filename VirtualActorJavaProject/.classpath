@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-builder"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-client"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-dependencies"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-jungle"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-lang-de"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-lang-en"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-lang-it"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-lang-ru"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-lang-sv"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-lang-te"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-lang-tr"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-redstart"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-runtime"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-server"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-signalproc"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/marytts-transcription"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/voice-cmu-slt-hsmm"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

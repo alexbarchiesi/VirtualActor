@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maryxml version="0.4"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns=" http://mary.dfki.de/2002/MaryXML"
+ xml:lang="en-US">
+  <p>
+	<prosody rate="+0%" pitch="+10%">
+		Just then they came in sight of thirty or forty windmills that rise from that plain.
+	</prosody>
+	<prosody rate="+0%" pitch="+10%" contour="(0%,0%)(10%,50%)(20%,-20%)(50%,10%)(70%, 40%)(100%,-40%)">
+		Just then they came in sight of thirty or forty windmills that rise from that plain.
+	</prosody>
+	<prosody>
+		And no sooner did Don Quixote see them that he said to his squire,
+	</prosody>
+	<prosody contour="(0%,-10%) (30%,20%) (40%,-20%)(60%,20%)(100%,-20%)">
+		And no sooner did Don Quixote see them that he said to his squire,
+	</prosody>
+	<prosody pitch="-20%" >
+		"Fortune is guiding our affairs better than we ourselves could have wished.		
+	</prosody>
+	<prosody pitch="-20%" contour="(0%,20%) (30%,50%) (40%,30%)(50%,20%)(80%,0%)(+100%,-20%)">
+		"Fortune is guiding our affairs better than we ourselves could have wished.		
+	</prosody>
+	<prosody>
+		Do you see over yonder, friend Sancho, thirty or forty hulking giants?
+	</prosody>
+	<prosody>
+		I intend to do battle with them and slay them.
+	</prosody>
+	<prosody>
+		With their spoils we shall begin to be rich for this is a righteous war
+	</prosody>
+	<prosody>
+		and the removal of so foul a brood from off the face of the earth is a service God will bless."
+	</prosody>
+	<prosody>
+		"What giants?"
+	</prosody>
+	<prosody>
+		asked Sancho Panza.
+	</prosody>
+	<prosody>
+		"Those you see over there,"
+	</prosody>
+	<prosody>
+		replied his master,	
+	</prosody>
+	<prosody>
+		"with their long arms.
+	</prosody>
+	<prosody>
+		Some of them have arms well nigh two leagues in length."	
+	</prosody>
+	<prosody>
+		"Take care, sir,"
+	</prosody>
+	<prosody>
+		cried Sancho.
+	</prosody>
+	<prosody>
+		"Those over there are not giants but windmills.	
+	</prosody>
+	<prosody>
+		Those things that seem to be their arms are sails which,
+	</prosody>
+	<prosody>
+		when they are whirled around by the wind,
+	</prosody>
+	<prosody>
+		turn the millstone."
+	</prosody>
+  </p>
+</maryxml>
