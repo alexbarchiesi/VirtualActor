@@ -1,5 +1,3 @@
-import java.util.Set;
-
 import javax.sound.sampled.AudioInputStream;
 
 import org.w3c.dom.Document;
@@ -32,7 +30,6 @@ public class VirtualActorMain {
 		
 		System.out.println(marytts.getInputType());
 		System.out.println(marytts.getOutputType());
-//		marytts.setVoice(voices.iterator().next());
 		
 		String dataString = VirtualActorUtils.readFile("../maryxml-input/donquixotewindmills1.xml");
 		Document xmlDocument = DomUtils.parseDocument(dataString, false);
