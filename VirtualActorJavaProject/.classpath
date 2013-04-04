@@ -20,5 +20,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/marytts-signalproc"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/marytts-transcription"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/voice-cmu-slt-hsmm"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/twitter4j/twitter4j-core-3.0.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
