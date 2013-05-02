@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.w3.org/2001/10/synthesis
+                   http://www.w3.org/TR/speech-synthesis/synthesis.xsd"
+         xml:lang="en-US">
+  <p>
+	<prosody volume="+0%" rate="+0%" pitch="+0%" range="large" contour="(0%,-10%) (30%,20%) (40%,-20%) (60%,20%) (80%, 40%) (100%,-20%)">
+		I'm <emphasis>trying</emphasis> to put some emphasis on this word.
+	</prosody>
+  </p>
+  <break time="2s"/>
+  <p>
+  <prosody volume="+0%" rate="+0%" pitch="+0%" range="large" contour="(0%,-10%) (30%,20%) (40%,-20%) (60%,20%) (80%, 40%) (100%,-20%)">
+		I'm trying to put some <emphasis>emphasis</emphasis> on this word.
+	</prosody>
+  </p>
+  <break time="2s"/>
+  <p>
+	<prosody volume="+0%" rate="+0%" pitch="+0%" range="large" contour="(0%,-10%) (30%,20%) (40%,-20%) (60%,20%) (80%, 40%) (100%,-20%)">
+		I'm trying to put some emphasis on this <emphasis>word</emphasis>.
+	</prosody>
+  </p>
+</speak>

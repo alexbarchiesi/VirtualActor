@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<maryxml version="0.4"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns=" http://mary.dfki.de/2002/MaryXML"
+ xml:lang="en-US">
+  
+  <p>
+	<prosody volume="-10%" rate="-20%" pitch="-20%" range="low" contour="(0%,0%) (10%,50%) (20%,-20%) (50%,10%) (60%,40%) (100%,0%)">
+		I shouldnt need to tell you how I'm feeling right now.
+	</prosody>
+  </p>
+  <p>
+	<prosody volume="+20%" rate="+10%" pitch="+10%" range="high" contour="(0%,0%) (10%,50%) (20%,-20%) (50%,10%) (60%,40%) (100%,0%)">
+		I shouldnt need to tell you how I'm feeling right now.
+	</prosody>
+  </p>
+  <p>
+	<prosody volume="+50%" rate="+20%" pitch="+40%" range="low" contour="(0%,0%) (10%,50%) (20%,-20%) (50%,10%) (60%,40%) (100%,0%)">
+		I shouldnt need to tell you how I'm feeling right now.
+	</prosody>
+  </p>
+</maryxml>

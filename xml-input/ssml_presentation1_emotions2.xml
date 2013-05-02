@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.w3.org/2001/10/synthesis
+                   http://www.w3.org/TR/speech-synthesis/synthesis.xsd"
+         xml:lang="en-US">
+  <p>
+	<prosody volume="+0%" rate="+0%" pitch="+0%" range="default" contour="(0%,-10%) (30%,20%) (40%,-20%) (60%,20%) (80%, 40%) (100%,-20%)">
+		I'm so excited, I just cant hide it.
+	</prosody>
+  </p>
+  <break time="2s"/>
+  <p>
+	<prosody volume="+0%" rate="+0%" pitch="+0%" range="default" contour="(0%, 30%) (20%,50%) (30%,20%) (70%,-30%) (100%, 40%)">
+		I'm so excited, I just cant hide it.
+	</prosody>
+  </p>
+  <break time="2s"/>
+  <p>
+	<prosody volume="+0%" rate="+0%" pitch="+0%" range="default" contour="(0%,0%) (10%,50%) (20%,-20%) (50%,10%) (70%,40%) (100%,10%)">
+		I'm so excited, I just cant hide it.
+	</prosody>
+  </p>
+</speak>
