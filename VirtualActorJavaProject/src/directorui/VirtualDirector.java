@@ -1,5 +1,7 @@
 package directorui;
 
+import java.awt.BorderLayout;
+
 import maryttsutils.MaryTTSWrapper;
 import ssmlobjects.ProsodyElem;
 import ssmlobjects.SSMLDoc;
@@ -17,29 +19,54 @@ public class VirtualDirector {
 
 	}
 	
-	public void setText(String input){
-		pe = new ProsodyElem();
-		pe.setContent(input);
+	public void reset(){
 		sd =  new SSMLDoc();
+		pe = new ProsodyElem();
+	}
+	
+	public void setText(String input){
+		reset();
+		pe.setContent(input);
 		sd.putBlock(pe);
 	}
 	
+	public void setVolume(int d_volume) {
+		pe.setD_volume(d_volume);
+	}
+	
+	public void setRate(int d_rate) {
+		pe.setD_rate(d_rate);
+	}
+
+	
+	public void setPitch(int d_pitch) {
+		pe.setD_pitch(d_pitch);
+	}
+
+	
+	public void setRange(int d_range) {
+		pe.setD_range(d_range);
+	}
+
+
 	public void playAudio() {
+		System.out.println(sd.toString());
+		
 		MaryTTSWrapper.readInput(sd.toString(), "SSML");
 	}
 }
 
 class DisplayFrame extends javax.swing.JFrame {
-	
-    public DisplayFrame(VirtualDirector parent){	
-        this.setSize(600, 600); //The window Dimensions
+	private static final long serialVersionUID = 1L;
+
+	public DisplayFrame(VirtualDirector parent){	
+        this.setSize(620, 620); //The window Dimensions
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
-        javax.swing.JPanel panel = new javax.swing.JPanel();
-        panel.setBounds(20, 20, 600, 600);
+        javax.swing.JPanel panel = new javax.swing.JPanel( new BorderLayout() );
         
         processing.core.PApplet sketch = new VirtualDirectorSketch(parent);
-        panel.add(sketch);
+        panel.add(sketch, BorderLayout.CENTER);
         
         this.add(panel);
         

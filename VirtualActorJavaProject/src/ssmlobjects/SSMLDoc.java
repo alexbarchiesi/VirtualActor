@@ -20,13 +20,14 @@ public class SSMLDoc {
 						"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \n" +
 						"xsi:schemaLocation=\"http://www.w3.org/2001/10/synthesis \n" +
 						"http://www.w3.org/TR/speech-synthesis/synthesis.xsd\" \n" +
-						"xml:lang=\"en-US\"> \n";
+						"xml:lang=\"en-US\"> \n" +
+						"<p> \n";
 		
 		for(ProsodyElem pe : blocks){
 			output += pe.toString() + "\n";
 		}
 		
-		output+="</speak>";
+		output+="</p> \n</speak>";
 		
 		return output;
 	}
