@@ -40,10 +40,10 @@ public class ProsodyElem {
 			output += "contour=\"";
 			
 			for(Map.Entry<Integer, Integer> entry : contour.entrySet()){
-				int time = entry.getKey();
+				int time  = entry.getKey();
 				int pitch = entry.getValue();
 				
-				output += "("+time+"%,"+pitch+"%)";
+				output += "("+time+"%,"+pitch+"%) ";
 			}
 			
 			output += "\"";
@@ -128,6 +128,12 @@ public class ProsodyElem {
 		}
 		
 		return "default";
+	}
+
+	public void setContour(TreeMap<Integer, Integer> ct) {
+		this.contour = new TreeMap<Integer, Integer>();
+		if(ct == null || ct.isEmpty()) return;
+		this.contour.putAll(ct);
 	}
 
 }

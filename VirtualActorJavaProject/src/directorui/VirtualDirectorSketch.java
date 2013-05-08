@@ -4,6 +4,9 @@ import controlP5.*;
 import processing.core.*;
 import ssmlobjects.ProsodyElem;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 public class VirtualDirectorSketch extends PApplet {
 	private static final long serialVersionUID = 1L;
 
@@ -15,17 +18,33 @@ public class VirtualDirectorSketch extends PApplet {
 	private int sliderRate		= ProsodyElem.DEFAULT_RATE;
 	private int sliderPitch		= ProsodyElem.DEFAULT_PITCH;
 	private int sliderRange		= ProsodyElem.DEFAULT_RANGE;
+	
+//	private TreeMap<Integer,Integer> countourTargets = new TreeMap<Integer,Integer>();
+	private ContourArea contourArea;
 
-  public VirtualDirectorSketch(VirtualDirector parent) {
+  public VirtualDirectorSketch(int width, int height, VirtualDirector parent) {
 	this.director = parent;
+	this.width = width;
+	this.height = height;
 	}
 
 public void setup() {
-	  size(600,600);
 	  
 	  // initiate
-	  PFont font = createFont("segoe",20);
+	  size(width,height);
+	  PFont font = createFont("segoe",12);
 	  cp5 = new ControlP5(this);
+	  
+	  // contour
+	  contourArea = new ContourArea(10, 370, 500, 300, createGraphics(500, 300));
+	  
+	  cp5.addToggle("toggleRemoveCP")
+	     .setPosition(450,700)
+	     .setSize(60,20)
+	     .setValue(true)
+	     .setMode(ControlP5.SWITCH)
+	     .setCaptionLabel("Add Remove")
+	     ;
 	  
 	  // input text field
 	  cp5.addTextfield("input")
@@ -79,18 +98,20 @@ public void setup() {
 	     .setCaptionLabel("Range")
 	     ;
 	  
-	  
-	  
-	  
 	  textFont(font);
   }
 
   public void draw() {
-	  textField = cp5.get(Textfield.class,"input").getText();
-	  
 	  background(0);
 	  fill(255,255,255);
+	  
+	  contourArea.passMouse(mouseX, mouseY);
+	  contourArea.draw();
+	  image(contourArea.getPg(), contourArea.getX0(), contourArea.getY0());
+	  
+	  textField = cp5.get(Textfield.class,"input").getText();
 	  text(textField, 10,30);
+	  
   }
   
   public void play() {
@@ -105,14 +126,41 @@ public void setup() {
 	  director.setRate(sliderRate);
 	  director.setPitch(sliderPitch);
 	  director.setRange(sliderRange);
+	  director.setContour(contourArea.getContour());
 	  director.playAudio();
   }
 
   public void clear() {
-	cp5.get(Textfield.class,"input").clear();
-	cp5.getController("sliderVolume").setValue(ProsodyElem.DEFAULT_VOLUME);
-	cp5.getController("sliderRate").setValue(ProsodyElem.DEFAULT_RATE);
-	cp5.getController("sliderPitch").setValue(ProsodyElem.DEFAULT_PITCH);
-	cp5.getController("sliderRange").setValue(ProsodyElem.DEFAULT_RANGE);
+	  contourArea.reset();
+	  
+	  cp5.get(Textfield.class,"input").clear();
+	  cp5.getController("sliderVolume").setValue(ProsodyElem.DEFAULT_VOLUME);
+	  cp5.getController("sliderRate").setValue(ProsodyElem.DEFAULT_RATE);
+	  cp5.getController("sliderPitch").setValue(ProsodyElem.DEFAULT_PITCH);
+	  cp5.getController("sliderRange").setValue(ProsodyElem.DEFAULT_RANGE);
   }
+  
+  public void mousePressed(){
+	  System.out.println(mouseX);
+	  System.out.println(contourArea.isOver());
+	  
+	  if(contourArea.isOver()){
+		  contourArea.mousePressed();
+	  }
+  }
+  
+  public void mouseDragged(){
+	  if(contourArea.isOver()){
+		  contourArea.mouseDragged();
+	  }
+  }
+  
+  public void mouseReleased(){
+	  contourArea.mouseReleased();
+  }
+  
+  public void toggleRemoveCP(boolean theFlag) {
+	  println("toggle event: " + theFlag);
+	  contourArea.toggleAddRemoveMode(theFlag);
+	}
 }

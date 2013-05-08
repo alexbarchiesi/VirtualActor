@@ -1,6 +1,7 @@
 package directorui;
 
 import java.awt.BorderLayout;
+import java.util.TreeMap;
 
 import maryttsutils.MaryTTSWrapper;
 import ssmlobjects.ProsodyElem;
@@ -54,18 +55,22 @@ public class VirtualDirector {
 		
 		MaryTTSWrapper.readInput(sd.toString(), "SSML");
 	}
+
+	public void setContour(TreeMap<Integer, Integer> contour) {
+		pe.setContour(contour);
+	}
 }
 
 class DisplayFrame extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
 
-	public DisplayFrame(VirtualDirector parent){	
-        this.setSize(620, 620); //The window Dimensions
+	public DisplayFrame(VirtualDirector parent){
+        this.setSize(540, 800); //The window Dimensions
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         javax.swing.JPanel panel = new javax.swing.JPanel( new BorderLayout() );
         
-        processing.core.PApplet sketch = new VirtualDirectorSketch(parent);
+        processing.core.PApplet sketch = new VirtualDirectorSketch(this.getWidth(), this.getHeight(), parent);
         panel.add(sketch, BorderLayout.CENTER);
         
         this.add(panel);
