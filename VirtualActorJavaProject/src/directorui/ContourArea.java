@@ -137,11 +137,11 @@ public class ContourArea extends PApplet {
 	}
 	
 	public void mouseDragged(){
-	   if(locked){
-		   // move control point with cursor
-		   selected.setX(mouseX);
-		   selected.setY(mouseY);
-	   }
+		if(locked){
+			// move control point with cursor
+			selected.setX(mouseX);
+			selected.setY(mouseY);
+		}
 	}
 
 	public void mouseReleased(){
@@ -209,7 +209,8 @@ public class ContourArea extends PApplet {
 	}
 
 	public void passMouse(int mX, int mY) {
-		  this.mouseX = mX - x0;
-		  this.mouseY = mY - y0;
+		// keep local mouse position
+		this.mouseX = mX - x0;
+		this.mouseY = mY - y0;
 	}
 }
