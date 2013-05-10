@@ -2,17 +2,13 @@ package directorui;
 
 import controlP5.*;
 import processing.core.*;
-import ssmlobjects.ProsodyElem;
-
-import java.util.ArrayList;
-import java.util.TreeMap;
+import ssmlobjects.*;
 
 public class VirtualDirectorSketch extends PApplet {
 	private static final long serialVersionUID = 1L;
 
 	private VirtualDirector director;
 	private ControlP5 cp5;
-	private String textField = "";
 	
 	private int sliderVolume	= ProsodyElem.DEFAULT_VOLUME;
 	private int sliderRate		= ProsodyElem.DEFAULT_RATE;
@@ -32,18 +28,19 @@ public void setup() {
 	  
 	  // initiate
 	  size(width,height);
-	  PFont font = createFont("segoe",12);
 	  cp5 = new ControlP5(this);
-	  
+	  PFont font = createFont("Segoe UI", 18);
+	  textFont(font);
+	 	  
 	  // contour
 	  contourArea = new ContourArea(10, 370, 500, 300, createGraphics(500, 300));
 	  
 	  cp5.addToggle("toggleRemoveCP")
-	     .setPosition(450,700)
-	     .setSize(60,20)
+	     .setPosition(10,700)
+	     .setSize(100,30)
 	     .setValue(true)
 	     .setMode(ControlP5.SWITCH)
-	     .setCaptionLabel("Add Remove")
+	     .setCaptionLabel("Toggle Add/Remove mode")
 	     ;
 	  
 	  // input text field
@@ -57,12 +54,29 @@ public void setup() {
 	  
 	  cp5.addBang("play")
 	     .setPosition(10,120)
-	     .setSize(80,40)
+	     .setSize(100,40)
+	     .setCaptionLabel("Play Audio")
 	     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
 	     ;
-	  cp5.addBang("clear")
-	     .setPosition(120,120)
-	     .setSize(80,40)
+	  
+	  cp5.addBang("clearTxt")
+	     .setPosition(410,120)
+	     .setSize(100,40)
+	     .setCaptionLabel("Clear Text")
+	     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+	     ;
+	  
+	  cp5.addBang("clearSliders")
+	     .setPosition(410,300)
+	     .setSize(100,40)
+	     .setCaptionLabel("Clear Sliders")
+	     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+	     ;
+	  
+	  cp5.addBang("clearContour")
+	     .setPosition(410,700)
+	     .setSize(100,40)
+	     .setCaptionLabel("Clear Contour Area")
 	     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
 	     ;
 	  
@@ -71,8 +85,6 @@ public void setup() {
 	     .setPosition(10,180)
 	     .setSize(30,150)
 	     .setRange(0,100)
-//	     .setRange(0,5)
-//	     .setNumberOfTickMarks(6)
 	     .setCaptionLabel("Volume")
 	     ;
 
@@ -97,8 +109,6 @@ public void setup() {
 	     .setNumberOfTickMarks(5)
 	     .setCaptionLabel("Range")
 	     ;
-	  
-	  textFont(font);
   }
 
   public void draw() {
@@ -109,8 +119,7 @@ public void setup() {
 	  contourArea.draw();
 	  image(contourArea.getPg(), contourArea.getX0(), contourArea.getY0());
 	  
-	  textField = cp5.get(Textfield.class,"input").getText();
-	  text(textField, 10,30);
+	  text("Virtual Actor: Director UI", 10,30);
 	  
   }
   
@@ -121,7 +130,7 @@ public void setup() {
 //	  System.out.println("pitch: "+sliderPitch);
 //	  System.out.println("range: "+sliderRange);
 	  
-	  director.setText(textField);
+	  director.setText(cp5.get(Textfield.class,"input").getText());
 	  director.setVolume(sliderVolume);
 	  director.setRate(sliderRate);
 	  director.setPitch(sliderPitch);
@@ -130,14 +139,19 @@ public void setup() {
 	  director.playAudio();
   }
 
-  public void clear() {
-	  contourArea.reset();
-	  
+  public void clearTxt() {
 	  cp5.get(Textfield.class,"input").clear();
+  }
+  
+  public void clearSliders() {
 	  cp5.getController("sliderVolume").setValue(ProsodyElem.DEFAULT_VOLUME);
 	  cp5.getController("sliderRate").setValue(ProsodyElem.DEFAULT_RATE);
 	  cp5.getController("sliderPitch").setValue(ProsodyElem.DEFAULT_PITCH);
 	  cp5.getController("sliderRange").setValue(ProsodyElem.DEFAULT_RANGE);
+  }
+  
+  public void clearContour() {
+	  contourArea.reset();
   }
   
   public void mousePressed(){

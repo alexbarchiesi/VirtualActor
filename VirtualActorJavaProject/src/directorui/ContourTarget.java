@@ -7,7 +7,8 @@ import processing.core.*;
 public class ContourTarget extends PApplet {
 	private static final long serialVersionUID = 1L;
 	
-	public static final int TARGET_RADIUS = 4;
+	public static final int TARGET_RADIUS = 8;
+	public static final int RADIUS_DELTA = 4;
 	
 //	private final int x0;
 //	private final int y0;
@@ -23,7 +24,7 @@ public class ContourTarget extends PApplet {
 	
 	public boolean isOver(int px, int py) {
 //		return dist(px, py, this.x, this.y) < TARGET_RADIUS;	// circle
-		return abs(px-this.x) < TARGET_RADIUS && abs(py-this.y) < TARGET_RADIUS;
+		return abs(px-this.x) < TARGET_RADIUS + RADIUS_DELTA && abs(py-this.y) < TARGET_RADIUS + RADIUS_DELTA;
 	}
 	
 	public void draw(){
