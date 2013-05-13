@@ -21,8 +21,7 @@ public class ContourArea extends PApplet {
 	// targets
 	private ArrayList<ContourTarget> targets;
 	private ContourTarget selected;
-	private boolean locked;
-	private boolean addRemove;
+	private boolean locked, addRemove, displayCoords;
 
 	public ContourArea(int x0, int y0, int width, int height, PGraphics pg){
 		this.x0 = x0;
@@ -99,19 +98,31 @@ public class ContourArea extends PApplet {
 				pg.rectMode(RADIUS);
 				pg.rect(x, y, ContourTarget.TARGET_RADIUS, ContourTarget.TARGET_RADIUS);
 			}
+			
+			// display coordinates of control points
+			if(displayCoords){
+				for(Map.Entry<Integer, Integer> entry : plot.entrySet()) {
+					displayCoords(entry.getKey(),entry.getValue());
+				}
+			}
 		}
-
+		
 		// display cursor coordinates
 		if(isOver()){
-			pg.fill(STROKE_COLOR[0], STROKE_COLOR[1], STROKE_COLOR[2], STROKE_COLOR[3]);
-
-			String txt = round(map(mouseX, 0, w, 0, 100))+"%,"+round(map(mouseY, 0, h, 100, -100))+"%";
-			pg.text(txt, mouseX>w-5-pg.textWidth(txt)? w-pg.textWidth(txt) : mouseX+5, mouseY<10? 10 : mouseY);
+			displayCoords(mouseX, mouseY);
 		}
 		
 		pg.endDraw();
 	}
 	
+	private void displayCoords(int px, int py) {
+		pg.fill(STROKE_COLOR[0], STROKE_COLOR[1], STROKE_COLOR[2], STROKE_COLOR[3]);
+		
+		String txt = round(map(px, 0, w, 0, 100))+"%,"+round(map(py, 0, h, 100, -100))+"%";
+		pg.text(txt, px>w-5-pg.textWidth(txt)? w-pg.textWidth(txt) : px+5, py<10? 10 : py);
+		
+	}
+
 	public void mousePressed(){		
 		// if not empty, find selected
 		if(!targets.isEmpty()){
@@ -183,6 +194,10 @@ public class ContourArea extends PApplet {
 	
 	public void toggleAddRemoveMode(boolean state){
 		addRemove = state;
+	}
+	
+	public void toggleDisplayCoords(boolean state){
+		displayCoords = state;
 	}
 
 	public TreeMap<Integer, Integer> getContour() {

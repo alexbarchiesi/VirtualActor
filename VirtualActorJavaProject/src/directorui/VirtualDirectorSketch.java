@@ -40,7 +40,14 @@ public void setup() {
 	     .setSize(100,30)
 	     .setValue(true)
 	     .setMode(ControlP5.SWITCH)
-	     .setCaptionLabel("Toggle Add/Remove mode")
+	     .setCaptionLabel("Mode: Add/Remove")
+	     ;
+	  cp5.addToggle("toggleCoords")
+	     .setPosition(120,700)
+	     .setSize(100,30)
+	     .setValue(false)
+	     .setMode(ControlP5.SWITCH)
+	     .setCaptionLabel("Display Coordinates")
 	     ;
 	  
 	  // input text field
@@ -173,8 +180,11 @@ public void setup() {
 	  contourArea.mouseReleased();
   }
   
-  public void toggleRemoveCP(boolean theFlag) {
-	  println("toggle event: " + theFlag);
-	  contourArea.toggleAddRemoveMode(theFlag);
-	}
+  public void toggleRemoveCP(boolean flag) {
+	  contourArea.toggleAddRemoveMode(flag);
+  }
+  
+  public void toggleCoords(boolean flag) {
+	  contourArea.toggleDisplayCoords(flag);
+  }
 }
