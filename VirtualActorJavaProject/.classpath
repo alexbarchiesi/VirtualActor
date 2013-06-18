@@ -21,21 +21,27 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/marytts-transcription"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/voice-cmu-slt-hsmm"/>
 	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/twitter4j/twitter4j-core-3.0.3.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/core.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/gluegen-rt.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/gluegen-rt-natives-linux-amd64.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/gluegen-rt-natives-linux-armv6hf.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/gluegen-rt-natives-linux-i586.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/gluegen-rt-natives-macosx-universal.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/gluegen-rt-natives-windows-amd64.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/gluegen-rt-natives-windows-i586.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/jogl-all.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/jogl-all-natives-linux-amd64.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/jogl-all-natives-linux-armv6hf.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/jogl-all-natives-linux-i586.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/jogl-all-natives-macosx-universal.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/jogl-all-natives-windows-amd64.jar"/>
-	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/base/core/jogl-all-natives-windows-i586.jar"/>
 	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/user/controlP5/controlP5.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/user/minim/jsminim.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/user/minim/minim.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/user/minim/minim-spi.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/user/minim/mp3spi1.9.4.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/user/minim/tritonus_aos.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/user/minim/tritonus_share.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/core.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/gluegen-rt-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/gluegen-rt-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/gluegen-rt-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/gluegen-rt-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/gluegen-rt-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/jogl-all.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/jogl-all-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/jogl-all-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/jogl-all-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/jogl-all-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/jogl-all-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="E:/EPFL/MSc Semester Project II - Virtual Actor/VirtualActor/processing/core/library/jogl-all-natives-windows-i586.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,11 +1,8 @@
 package testpackage;
 
-import sourceutils.TwitterRetriever;
 import maryttsutils.MaryTTSWrapper;
 
 public class VirtualActorTest1 {
-	
-
 	
 	public static void main(String[] args) {
 		MaryTTSWrapper.init();
@@ -33,7 +30,6 @@ public class VirtualActorTest1 {
 //		MaryTTSWrapper.readSSMLFile("../xml-input/ssml_presentation1_emotions3.xml");
 		
 		System.exit(0);
-		
 	}
 
 }

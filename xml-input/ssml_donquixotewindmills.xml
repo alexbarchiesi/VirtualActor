@@ -1,0 +1,66 @@
+<?xml version="1.0"?> 
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.w3.org/2001/10/synthesis 
+http://www.w3.org/TR/speech-synthesis/synthesis.xsd" 
+xml:lang="en-US"> 
+<p> 
+<prosody pitch="+2st" range="x-low" contour="(0%,0%) (10%,50%) (20%,-20%) (50%,10%) (70%,39%) (100%,-10%) ">
+Just then they came in sight of thirty or forty windmills that rise from that plain.
+</prosody>
+<prosody pitch="+2st" range="x-low" contour="(0%,-10%) (30%,20%) (40%,-20%) (60%,20%) (100%,-20%) ">
+And no sooner did Don Quixote see them that he said to his squire,
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,20%) (30%,50%) (40%,30%) (50%,10%) (80%,20%) (100%,0%) ">
+"Fortune is guiding our affairs better than we ourselves could have wished.
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,0%) (10%,30%) (30%,10%) (60%,20%) (100%,40%) ">
+Do you see over yonder, friend San cho, thirty or forty hulking giants?
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,30%) (10%,-10%) (40%,40%) (60%,0%) (90%,30%) (100%,0%) ">
+I intend to do battle with them and slay them.
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,30%) (10%,-10%) (30%,40%) (50%,0%) (80%,10%) (100%,-10%) ">
+With their spoils we shall begin to be rich for this is a righteous war
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,30%) (10%,-10%) (30%,40%) (50%,0%) (80%,10%) (100%,0%) ">
+and the removal of so foul a brood from off the face of the earth is a service God will bless."
+</prosody>
+<prosody range="x-low" contour="(0%,50%) (60%,-10%) (100%,30%) ">
+"What giants?"
+</prosody>
+<prosody range="x-low" contour="(0%,0%) (80%,20%) (100%,30%) ">
+asked San cho Panza.
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,30%) (30%,20%) (50%,50%) (100%,0%) ">
+"Those you see over there,"
+</prosody>
+<prosody range="x-low" contour="(0%,0%) (80%,20%) (100%,30%) ">
+replied his master,
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,30%) (20%,50%) (30%,-20%) (70%,30%) (100%,20%) ">
+"with their long arms.
+</prosody>
+<prosody rate="-10%" pitch="-2st" range="x-low" contour="(0%,30%) (30%,20%) (50%,-10%) (70%,40%) (100%,0%) ">
+Some of them have arms well nigh two leagues in length."
+</prosody>
+<prosody range="x-low" contour="(0%,0%) (30%,-10%) (60%,30%) (100%,10%) ">
+"Take care, sir,"
+</prosody>
+<prosody range="x-low" contour="(20%,0%) (80%,20%) ">
+cried San cho.
+</prosody>
+<prosody rate="-10%" range="x-low" contour="(0%,20%) (10%,0%) (30%,10%) (50%,-10%) (70%,40%) (100%,0%) ">
+"Those over there are not giants but windmills.
+</prosody>
+<prosody rate="-10%" range="x-low" contour="(0%,30%) (20%,20%) (30%,0%) (40%,10%) (60%,-10%) (80%,20%) (100%,20%) ">
+Those things that seem to be their arms are sails which,
+</prosody>
+<prosody rate="-10%" range="x-low" contour="(0%,10%) (20%,30%) (30%,0%) (90%,20%) (100%,10%) ">
+when they are whirled around by the wind,
+</prosody>
+<prosody rate="-10%" range="x-low" contour="(0%,10%) (100%,-10%) ">
+turn the millstone."
+</prosody>
+</p> 
+</speak>
