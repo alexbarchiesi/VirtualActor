@@ -8,13 +8,13 @@ public class VirtualActorTest1 {
 		MaryTTSWrapper.init();
 		
 //		MaryTTSWrapper.printAvailableConfig();
-//		MaryTTSWrapper.printConfig();
+		MaryTTSWrapper.printConfig();		
 		
 		// 2001
 //		MaryTTSWrapper.readTxtInput("I'm sorry Dave, I'm afraid I cant do that.");
 		
 		// read first tweet
-		MaryTTSWrapper.readTweetAsMaryXML("#art", null, "-20%", "(0%,30%) (10%,-10%) (40%,40%) (60%,0%) (90%,30%) (100%,0%)");
+//		MaryTTSWrapper.readTweetAsMaryXML("#art", null, "-20%", "(0%,30%) (10%,-10%) (40%,40%) (60%,0%) (90%,30%) (100%,0%)");
 				
 		// reading don quixote
 //		MaryTTSWrapper.readRawMaryXMLFile("../xml-input/maryxml_donquixotewindmills.xml");	

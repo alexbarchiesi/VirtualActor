@@ -47,6 +47,10 @@ public class SSMLDocument {
 	public void putBlock(ProsodyElement pe) {
 		this.blocks.add(pe);
 	}
+	
+	public void putBlock(ProsodyElement pe, int pos) {
+		this.blocks.add(pos, pe);
+	}
 
 	public ProsodyElement getBlock(int i) {
 		return this.blocks.get(i);
@@ -83,5 +87,13 @@ public class SSMLDocument {
 
 	public void writeToFile(String path) {
 		TextFileUtilities.writeToFile(path, this.toString());
+	}
+
+	public boolean isSingleBlock() {
+		return this.blocks.size() == 1;
+	}
+
+	public void removeBlock(ProsodyElement pe) {
+		this.blocks.remove(pe);
 	}
 }

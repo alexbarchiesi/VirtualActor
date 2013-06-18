@@ -143,7 +143,7 @@ public class MaryTTSWrapper {
 	}
 
 	public static boolean isValidType(File file) {
-		if ( file.getName().endsWith("xml") || file.getName().endsWith("txt") ) return true;
-		return false;
+		return file.getName().endsWith("xml");
+//		return file.getName().endsWith("xml") || file.getName().endsWith("txt");
 	}
 }

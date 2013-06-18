@@ -13,6 +13,7 @@ import sourceutils.TextFileUtilities;
  *
  */
 public class ProsodyElement {
+	public final static String DEFAULT_CONTENT = "Type here...";
 	public final static int DEFAULT_VOLUME = 100;
 	public final static int DEFAULT_RATE = 0;
 	public final static int DEFAULT_PITCH = 0;
@@ -26,7 +27,7 @@ public class ProsodyElement {
 	private TreeMap<Integer, Integer> contour;
 
 	public ProsodyElement() {
-		this.content = "";
+		this.content = DEFAULT_CONTENT;
 		this.d_volume = DEFAULT_VOLUME;
 		this.d_rate = DEFAULT_RATE;
 		this.d_pitch = DEFAULT_PITCH;

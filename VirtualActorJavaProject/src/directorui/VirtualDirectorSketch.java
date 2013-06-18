@@ -153,16 +153,42 @@ public class VirtualDirectorSketch extends PApplet {
 			.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
 			;
 
+		// play audio and export
 		cp5.addButton("playFile")
 			.setPosition(770,60)
 			.setSize(100,40)
-			.setCaptionLabel("Play Whole File")
+			.setCaptionLabel("Play Document")
 			.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
 			;
+		
+		cp5.addButton("saveAudioFile")
+			.setPosition(890,60)
+			.setSize(100,40)
+			.setCaptionLabel("Export Audio")
+			.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+			;
+		
+		// add/remove prosody blocks
+		cp5.addButton("addBlock")
+			.setPosition(530,730)
+			.setSize(100,40)
+			.setCaptionLabel("Add New Block")
+			.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+			;     
 
+		cp5.addButton("removeBlock")
+			.setPosition(650,730)
+			.setSize(100,40)
+			.setCaptionLabel("Delete Current Block")
+			.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+			;
+		
 		// list of prosody blocks in file
 		clearProsodyBlocksList();
-		prosodyBlocksList.addItem("", 0); // first empty item
+		loadProsodyBlocksList();
+		
+		// load initial (empty) block
+		loadBlock(currentBlockIndex);
 	}
 
 	private void clearProsodyBlocksList() {
@@ -174,6 +200,7 @@ public class VirtualDirectorSketch extends PApplet {
 			.setSpacingColumn(20)
 			.setItemHeight(20)
 			.setBarHeight(25)
+			.setNoneSelectedAllowed(false)
 			.setCaptionLabel("Prosody Blocks")
 			.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
 		;
@@ -229,11 +256,14 @@ public class VirtualDirectorSketch extends PApplet {
 
 	public void prosodyBlocksList(int key) {
 		// select current active block
-		loadBlock(key, director.getBlock(currentBlockIndex));
+//		System.out.println("Active block:" + key);
+		applyBlockSettings();
+		loadBlock(key);
 	}
 
 	public void clearTxt() {
 		inputText.clear();
+		applyBlockSettings();
 	}
 
 	public void clearSliders() {
@@ -241,10 +271,12 @@ public class VirtualDirectorSketch extends PApplet {
 		cp5.getController("sliderRate").setValue(ProsodyElement.DEFAULT_RATE);
 		cp5.getController("sliderPitch").setValue(ProsodyElement.DEFAULT_PITCH);
 		cp5.getController("sliderRange").setValue(ProsodyElement.DEFAULT_RANGE);
+		applyBlockSettings();
 	}
 
 	public void clearContour() {
 		contourArea.reset();
+		applyBlockSettings();
 	}
 
 	public void mousePressed() {
@@ -276,7 +308,10 @@ public class VirtualDirectorSketch extends PApplet {
 
 	public void loadFile() {
 		director.loadFile();
-
+		currentBlockIndex = 0;
+		
+		loadProsodyBlocksList();
+		loadBlock(currentBlockIndex);
 	}
 
 	public void saveFile() {
@@ -285,9 +320,40 @@ public class VirtualDirectorSketch extends PApplet {
 
 		director.saveFile();
 	}
+	
+	public void saveAudioFile() {
+		applyBlockSettings();
+		loadProsodyBlocksList();
+		
+		director.exportAudioFile();
+	}
+	
+	public void addBlock() {
+		applyBlockSettings();
+		
+		currentBlockIndex++;
 
-	public void loadBlock(int index, ProsodyElement workingBlock) {
+		director.addNewBlockAt(currentBlockIndex);
+		loadProsodyBlocksList();
+		loadBlock(currentBlockIndex);
+	}
+	
+	public void removeBlock() {
+		// if this is the last block, don't delete it
+		if(director.isSingleBlock()) return;
+		
+		// move to previous block unless this is first block
+		if(currentBlockIndex != 0) currentBlockIndex--;
+		
+		director.deleteCurrentBlock();
+		loadProsodyBlocksList();
+		loadBlock(currentBlockIndex);
+	}
+
+	public void loadBlock(int index) {
 		currentBlockIndex = index;
+		
+		ProsodyElement workingBlock = director.getWorkingBlock(index);
 		originalText = workingBlock.getContent();
 		inputText.setText(originalText);
 

@@ -1,9 +1,12 @@
 package directorui;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.TreeMap;
 
+import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -17,7 +20,8 @@ import ssmlobjects.SSMLDocument;
  */
 public class VirtualDirector {
 	// for file handling
-	private JFileChooser fileChooser;
+	private JFileChooser xmlFileChooser;
+	private JFileChooser wavFileChooser;
 
 	// working data structures
 	private SSMLDocument workingDocument;
@@ -30,9 +34,13 @@ public class VirtualDirector {
 	private boolean playWholeFile;
 
 	public VirtualDirector() {
-		fileChooser = new JFileChooser();
-		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-		fileChooser.setFileFilter(new FileNameExtensionFilter("SSML file", "xml"));
+		xmlFileChooser = new JFileChooser();
+		xmlFileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		xmlFileChooser.setFileFilter(new FileNameExtensionFilter("SSML file", "xml"));
+
+		wavFileChooser = new JFileChooser();
+		wavFileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		wavFileChooser.setFileFilter(new FileNameExtensionFilter("WAV fail", "wav"));
 
 		workingDocument = new SSMLDocument();
 		workingBlock = new ProsodyElement();
@@ -71,9 +79,7 @@ public class VirtualDirector {
 	}
 
 	public void setText(String input) {
-		//		reset();
 		workingBlock.setContent(input);
-		//		workingDocument.putBlock(workingBlock);
 	}
 
 	public void setVolume(int d_volume) {
@@ -128,29 +134,27 @@ public class VirtualDirector {
 	}
 
 	public void loadFile() {
-		if (fileChooser.showOpenDialog(mainFrame) == JFileChooser.APPROVE_OPTION) { 
-			File file = fileChooser.getSelectedFile(); 
+		if (xmlFileChooser.showOpenDialog(mainFrame) == JFileChooser.APPROVE_OPTION) { 
+			File file = xmlFileChooser.getSelectedFile(); 
 
 			if (MaryTTSWrapper.isValidType(file)) {
-				System.out.println("Loading file...");
+//				System.out.println("Loading file...");
 				workingDocument = new SSMLDocument(file.getAbsolutePath());
 
 				if(workingDocument.isEmpty()) {
 					// do as if no file was given
+//					System.out.println("Error empty file");
 					reset();
 				} else {
 					workingBlock = workingDocument.getBlock(0);
 				}
-
-				sketch.loadProsodyBlocksList();
-				sketch.loadBlock(0, workingBlock);
 			}
 		}
 	}
 
 	public void saveFile() {		
-		if (fileChooser.showSaveDialog(mainFrame) == JFileChooser.APPROVE_OPTION) { 
-			File file = fileChooser.getSelectedFile();
+		if (xmlFileChooser.showSaveDialog(mainFrame) == JFileChooser.APPROVE_OPTION) { 
+			File file = xmlFileChooser.getSelectedFile();
 
 			if(file.exists()) {
 				// if file exists, prompt for confirmation
@@ -178,8 +182,49 @@ public class VirtualDirector {
 		return list;
 	}
 
-	public ProsodyElement getBlock(int key) {
+	public ProsodyElement getWorkingBlock(int key) {
 		workingBlock = workingDocument.getBlock(key);
 		return workingBlock;
+	}
+
+	public void exportAudioFile() {
+		if (wavFileChooser.showSaveDialog(mainFrame) == JFileChooser.APPROVE_OPTION) { 
+			File file = wavFileChooser.getSelectedFile();
+
+			if(file.exists()) {
+				// if file exists, prompt for confirmation
+				String title = "Overwrite file";
+				String message = "File already exists, overwrite?";
+
+				int reply = JOptionPane.showConfirmDialog(mainFrame, message, title, JOptionPane.YES_NO_OPTION);
+				if (reply != JOptionPane.YES_OPTION) {
+					return; // cancel save operation
+				}
+			}
+			
+			// proceed to writing the file
+			AudioInputStream audio = MaryTTSWrapper.xml2audio(this.workingDocument.toString(), "SSML");
+			
+			try {
+				AudioSystem.write(audio, AudioFileFormat.Type.WAVE, file);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void addNewBlockAt(int pos) {
+		workingBlock = new ProsodyElement();
+		
+		workingDocument.putBlock(workingBlock, pos);
+	}
+
+	public boolean isSingleBlock() {
+		return workingDocument.isSingleBlock();
+	}
+
+	public void deleteCurrentBlock() {
+		workingDocument.removeBlock(workingBlock);
 	}
 }
