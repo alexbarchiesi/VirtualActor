@@ -6,15 +6,13 @@ by Carlos Sanchez Witt.
 Description
 ===========
 
-Master Semester Project II, SINLAB/LDM, EPFL.
+Carlos Sanchez Witt.
+Master Semester Project, SINLAB/LDM, EPFL, 2013.
 
-The goal of this project is to build an emotive virtual actor through implementation of expressive voice synthesis and lip synced mouth animation.
+Project Presentation
 
-The project is divided in three aspects:
+The aim of this project is to create a tool that mimics the emotive performance of an actor through expressive voice synthesis.
 
-* Text input: the source of speech content, which can be existing literature (formatted for expressive reading), or a social channel with active participation (a Twitter feed for instance).
-* Audio output: the voice of the system. The right TTS system must be found for the best emotive speech synthesis.
-* Video output: the visual mouth animation, synced to the audio, as a visual stimulus in place of a physical, real actor.
 
 For more information read the wiki at:
 https://github.com/sinlab-semester-2013/VirtualActor/wiki
@@ -23,19 +21,19 @@ Contents
 --------
 
 - VirtualActorJavaProject: application code (Eclipse project)
+- final-presentation-files: audio and xml files of final presentation
 - marytts: MaryTTS Source Code (Eclipse projects)
-- maryxml-input: MaryXML formatted texts for reading by the application
+- processing: Processing and related libraries (controlP5 and minim)
+- twitter4j: Java library for Twitter integration (unused by final application)
+- xml-input: some SSML/MaryXML examples
 
-Setup and Dependencies
-======================
+Setup and Running Instructions
+=============================
 
-Requires Eclipse/Java, and importing all projects into workspace.
-
-Running Instructions
-====================
-
-Run VirtualActorJavaProject from within Eclipse.
-Add all MaryTTS projects as dependencies (unsure of which are required but quite a few are.)
+Requires Eclipse & Java.
+VirtualActorJavaProject (the main application) and all projects in marytts must be imported into the workspace.
+Verify links to dependencies.
+The main class to be executed is VirtualDirector inside the directorui package.
 
 Development Status
 ------------------
