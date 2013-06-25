@@ -40,7 +40,7 @@ public class VirtualDirector {
 
 		wavFileChooser = new JFileChooser();
 		wavFileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-		wavFileChooser.setFileFilter(new FileNameExtensionFilter("WAV fail", "wav"));
+		wavFileChooser.setFileFilter(new FileNameExtensionFilter("WAV file", "wav"));
 
 		workingDocument = new SSMLDocument();
 		workingBlock = new ProsodyElement();

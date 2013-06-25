@@ -244,6 +244,8 @@ public class VirtualDirectorSketch extends PApplet {
 
 	public void playBlock() {
 		applyBlockSettings();
+		loadProsodyBlocksList();
+		
 		director.loadAudio(false);
 	}
 
