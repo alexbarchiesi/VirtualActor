@@ -1,0 +1,21 @@
+<?xml version="1.0"?> 
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.w3.org/2001/10/synthesis 
+http://www.w3.org/TR/speech-synthesis/synthesis.xsd" 
+xml:lang="en-US"> 
+<p> 
+<prosody range="medium" >
+You guys werent home, so I let myself in!
+</prosody>
+<prosody rate="+16%" pitch="+5st" range="medium" >
+You guys werent home, so I let myself in!
+</prosody>
+<prosody rate="+16%" pitch="+5st" range="medium" contour="(0%,9%) (20%,9%) (33%,26%) (52%,-7%) (68%,27%) (79%,1%) (99%,33%) (100%,33%) ">
+You guys werent home, so I let myself in!
+</prosody>
+<prosody rate="+16%" pitch="+5st" range="medium" contour="(0%,18%) (9%,18%) (20%,6%) (32%,21%) (45%,3%) (57%,-4%) (66%,29%) (79%,9%) (88%,32%) (100%,32%) ">
+you guys werent home, so I let my self in!
+</prosody>
+</p> 
+</speak>
